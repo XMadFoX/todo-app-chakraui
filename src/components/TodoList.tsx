@@ -8,7 +8,7 @@ export default function TodoList() {
 	const [todos] = useRecoilState(todosState);
 
 	return (
-		<List>
+		<List backgroundColor='background'>
 			{todos.map((todo, index) => (
 				<TodoItem todo={todo} key={index} />
 			))}

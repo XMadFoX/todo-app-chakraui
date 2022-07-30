@@ -22,14 +22,16 @@ export default function TodoItem({ todo }) {
 	};
 
 	return (
-		<ListItem bgColor='containerbg' display='flex' alignItems='center'>
+		<ListItem display='flex' alignItems='center' padding='0.5rem' rounded='full'>
 			<Checkbox
 				defaultChecked={todo.done}
 				onChange={() => toggleDone(todo.id, !todo.done)}
 				rounded='full'
 				marginRight='1rem'
-			/>
-			<Text alignSelf='center'>{todo.text}</Text>
+				alignItems='center'
+			>
+			<Text decoration={todo.done && 'line-through'} color={todo.done && 'GrayText'} alignSelf='center' style={{}}>{todo.text}</Text>
+			</Checkbox>
 			<CloseButton
 				aria-label='Remove task'
 				onClick={() => removeTodo(todo.id)}
