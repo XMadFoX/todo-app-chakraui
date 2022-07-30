@@ -1,8 +1,10 @@
-import { Container } from "@chakra-ui/react";
-import TodoList from "../components/TodoList";
+import { Container } from '@chakra-ui/react';
+import CreateTodo from '../components/CreateTodo';
+import TodoList from '../components/TodoList';
 
 const Index = () => (
 	<Container>
+		<CreateTodo />
 		<TodoList />
 	</Container>
 );

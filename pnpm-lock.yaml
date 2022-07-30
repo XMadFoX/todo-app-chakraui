@@ -12,6 +12,7 @@ specifiers:
   '@types/react': ^18.0.0
   '@types/react-dom': ^18.0.0
   framer-motion: ^6.3.0
+  nanoid: ^4.0.0
   next: latest
   react: ^18.2.0
   react-dom: ^18.2.0
@@ -27,6 +28,7 @@ dependencies:
   '@emotion/react': 11.9.3_szkdlbnthht4v3jvm76fn7u6na
   '@emotion/styled': 11.9.3_y2x62d5bbinncmisoeyv36jqse
   framer-motion: 6.5.1_biqbaboplfbrettd7655fr4n2y
+  nanoid: 4.0.0
   next: 12.2.3_qugu52izettqdqqm5qcjcltcia
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -1740,6 +1742,12 @@ packages:
   /nanoid/3.3.4:
     resolution: {integrity: sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
+    dev: false
+
+  /nanoid/4.0.0:
+    resolution: {integrity: sha512-IgBP8piMxe/gf73RTQx7hmnhwz0aaEXYakvqZyE302IXW3HyVNhdNGC+O2MwMAVhLEnvXlvKtGbtJf6wvHihCg==}
+    engines: {node: ^14 || ^16 || >=18}
     hasBin: true
     dev: false
 
