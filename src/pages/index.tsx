@@ -4,6 +4,7 @@ import TodoList from '../components/TodoList';
 
 const Index = () => (
 	<Container>
+		<Hero />
 		<CreateTodo />
 		<TodoList />
 	</Container>
