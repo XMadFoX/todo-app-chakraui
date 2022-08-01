@@ -53,6 +53,7 @@ const Radio = (props) => {
 						color: 'blue.400',
 					},
 				}}
+				transition='all 0.3s ease-in-out'
 				_focus={{
 					boxShadow: 'outline',
 					opacity: '1',

@@ -32,6 +32,7 @@ export default function TodoItem({ todo }) {
 				<Text
 					decoration={todo.done && 'line-through'}
 					overflowWrap='break-word'
+					transitionDuration='0.3s'
 					color={todo.done && 'GrayText'}>
 					{todo.text}
 				</Text>

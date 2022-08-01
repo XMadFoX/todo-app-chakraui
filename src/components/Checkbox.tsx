@@ -34,10 +34,15 @@ export default function Checkbox(props) {
 				{...getCheckboxProps()}>
 				<Center
 					bgColor={state.isChecked ? 'transparent' : 'background'}
+					transitionDuration='0.3s'
 					w={5}
 					h={5}
 					rounded='full'>
-					{state.isChecked && <CheckIcon boxSize={2.5} />}
+					<CheckIcon
+						boxSize={state.isChecked ? 2.5 : 0}
+						transitionDuration='0.3s'
+						color='white'
+					/>
 				</Center>
 			</Center>
 			{props.children}
