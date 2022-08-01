@@ -22,7 +22,12 @@ export default function CreateTodo() {
 
 	return (
 		<form onSubmit={handleSubmit}>
-			<FormControl display='flex' backgroundColor='background' padding='0.5rem'>
+			<FormControl
+				display='flex'
+				backgroundColor='background'
+				padding='0.5rem'
+				mb={'1.5rem'}
+				rounded='6px'>
 				<Checkbox
 					marginRight='1rem'
 					onChange={(e) => setInput({ ...input, done: e.target.checked })}
