@@ -1,5 +1,6 @@
 import { Box } from '@chakra-ui/react';
 import CreateTodo from '../components/CreateTodo';
+import Filter from '../components/Filter';
 import Hero from '../components/Hero';
 import TodoList from '../components/TodoList';
 
@@ -25,6 +26,17 @@ const Index = () => (
 				<Filter />
 			</Box>
 		</Box>
+		<style jsx global>{`
+			@font-face {
+				font-family: 'Josefin Sans';
+				src: url(/fonts/JosefinSans-Regular.ttf) format('truetype');
+			}
+			@font-face {
+				font-family: 'Josefin Sans';
+				font-weight: 700;
+				src: url(/fonts/JosefinSans-Bold.ttf) format('truetype');
+			}
+		`}</style>
 	</Box>
 );
 
