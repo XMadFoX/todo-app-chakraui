@@ -8,6 +8,7 @@ const Index = () => (
 	<Box
 		width='100%'
 		height='100vh'
+		overflowY='auto'
 		bgColor='pagebg'
 		display='flex'
 		flexDirection='column'

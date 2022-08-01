@@ -4,17 +4,20 @@ import { useRecoilState } from 'recoil';
 import { filterState, todosState } from '../state';
 import Filter from './Filter';
 import TodoItem from './TodoItem';
+import { useAutoAnimate } from '@formkit/auto-animate/react'
 
 export default function TodoList() {
 	const [todos, setTodos] = useRecoilState(todosState);
 	const [filter] = useRecoilState(filterState);
+
+	const [parent] = useAutoAnimate()
 
 	const clearCompleted = () => {
 		setTodos(todos.filter((todo) => !todo.done));
 	};
 
 	return (
-		<List backgroundColor='background' rounded='6px'>
+		<List backgroundColor='background' rounded='6px' ref={parent}>
 			{todos
 				.filter((item) => {
 					switch (filter) {
