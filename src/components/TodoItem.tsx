@@ -1,7 +1,8 @@
 import React from 'react';
-import { Checkbox, CloseButton, ListItem, Text } from '@chakra-ui/react';
+import { CloseButton, ListItem, Text } from '@chakra-ui/react';
 import { useRecoilState } from 'recoil';
 import { todosState } from '../state';
+import Checkbox from './Checkbox';
 
 export default function TodoItem({ todo }) {
 	const [todos, setTodos] = useRecoilState(todosState);
@@ -22,22 +23,13 @@ export default function TodoItem({ todo }) {
 	};
 
 	return (
-		<ListItem
-			display='flex'
-			alignItems='center'
-			padding='0.5rem'
-			rounded='full'>
+		<ListItem display='flex' alignItems='center' padding='0.5rem'>
 			<Checkbox
 				isChecked={todo.done}
-				onChange={() => toggleDone(todo.id, !todo.done)}
-				rounded='full'
-				marginRight='1rem'
-				alignItems='center'>
+				onChange={() => toggleDone(todo.id, !todo.done)}>
 				<Text
 					decoration={todo.done && 'line-through'}
-					color={todo.done && 'GrayText'}
-					alignSelf='center'
-					style={{}}>
+					color={todo.done && 'GrayText'}>
 					{todo.text}
 				</Text>
 			</Checkbox>

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { AddIcon } from '@chakra-ui/icons';
-import { Checkbox, FormControl, IconButton, Input } from '@chakra-ui/react';
+import { FormControl, IconButton, Input } from '@chakra-ui/react';
 import { nanoid } from 'nanoid';
 import { useRecoilState } from 'recoil';
 import { todosState } from '../state';
+import Checkbox from './Checkbox';
 
 const defaultInputValue = {
 	text: '',
@@ -29,8 +30,10 @@ export default function CreateTodo() {
 				mb={'1.5rem'}
 				rounded='6px'>
 				<Checkbox
-					marginRight='1rem'
-					onChange={(e) => setInput({ ...input, done: e.target.checked })}
+					pr={2}
+					aria-label='Mark task as done'
+					isChecked={input.done}
+					onChange={() => setInput({ ...input, done: !input.done })}
 				/>
 				<Input
 					variant='unstyled'
@@ -40,6 +43,7 @@ export default function CreateTodo() {
 					onChange={(e) => setInput({ ...input, text: e.target.value })}
 				/>
 				<IconButton
+					ml='auto'
 					aria-label='Add'
 					icon={<AddIcon />}
 					onClick={handleSubmit}
