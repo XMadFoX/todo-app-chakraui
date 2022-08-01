@@ -24,7 +24,12 @@ export default function Hero() {
 					top: '0',
 				}}
 			/>
-			<Heading marginRight='auto'>Todo</Heading>
+			<Heading
+				marginRight='auto'
+				letterSpacing={'1rem'}
+				textTransform='uppercase'>
+				Todo
+			</Heading>
 			<ThemeToggle />
 		</Flex>
 	);

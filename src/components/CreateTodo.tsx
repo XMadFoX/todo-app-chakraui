@@ -37,16 +37,11 @@ export default function CreateTodo() {
 				/>
 				<Input
 					variant='unstyled'
-					placeholder='New item'
+					placeholder='Create a new todo...'
 					isRequired
 					value={input.text}
+					style={{ caretColor: '#5d77b4' }}
 					onChange={(e) => setInput({ ...input, text: e.target.value })}
-				/>
-				<IconButton
-					ml='auto'
-					aria-label='Add'
-					icon={<AddIcon />}
-					onClick={handleSubmit}
 				/>
 			</FormControl>
 		</form>

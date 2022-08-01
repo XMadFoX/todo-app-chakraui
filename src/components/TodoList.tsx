@@ -29,19 +29,20 @@ export default function TodoList() {
 				.map((todo, index) => (
 					<TodoItem todo={todo} key={index} />
 				))}
-			<Flex alignItems='center' px='1.5rem' opacity='0.5'>
-				<Text fontWeight='thin'>
+			<Flex alignItems='center' justifyContent='space-between' px='1.5rem'>
+				<Text fontWeight='thin' opacity='0.25'>
 					{todos.filter((todo) => !todo.done).length} items left
 				</Text>
-				<Box mx={'2rem'} display={['none', 'block']}>
+				<Box display={['none', 'block']}>
 					<Filter />
 				</Box>
 				<Button
 					onClick={clearCompleted}
 					variant='unstyled'
 					fontWeight='normal'
-					marginLeft='auto'>
-					Clear completed
+					opacity='0.25'
+					_hover={{ opacity: '1' }}>
+					Clear Completed
 				</Button>
 			</Flex>
 		</List>

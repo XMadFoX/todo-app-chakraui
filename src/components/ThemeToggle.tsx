@@ -9,6 +9,7 @@ export default function ThemeToggle() {
 	return (
 		<IconButton
 			aria-label={`toggle ${colorMode === 'light' ? 'dark' : 'light'} mode`}
+			bgColor='transparent'
 			onClick={toggleColorMode}
 			icon={colorMode === 'light' ? <SunIcon /> : <MoonIcon />}
 		/>

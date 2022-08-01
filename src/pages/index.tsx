@@ -13,7 +13,7 @@ const Index = () => (
 		flexDirection='column'
 		alignItems='center'
 		justifyContent='center'>
-		<Box zIndex={1}>
+		<Box zIndex={1} width='100%' px='1.5rem' maxWidth='3xl'>
 			<Hero />
 			<CreateTodo />
 			<TodoList />
@@ -27,6 +27,9 @@ const Index = () => (
 			</Box>
 		</Box>
 		<style jsx global>{`
+			html {
+				font-size: 18px;
+			}
 			@font-face {
 				font-family: 'Josefin Sans';
 				src: url(/fonts/JosefinSans-Regular.ttf) format('truetype');

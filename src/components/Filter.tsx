@@ -43,13 +43,19 @@ const Radio = (props) => {
 			<Box
 				{...checkbox}
 				cursor='pointer'
-				boxShadow='md'
-				_hover={{ color: 'text' }}
+				opacity='0.25'
+				_hover={{ opacity: '1' }}
 				_checked={{
+					fontWeight: 'bold',
+					opacity: '1',
 					color: 'blue.500',
+					_dark: {
+						color: 'blue.400',
+					},
 				}}
 				_focus={{
 					boxShadow: 'outline',
+					opacity: '1',
 				}}>
 				{`${props.children[0].toUpperCase()}${props.children.slice(1)}`}
 			</Box>

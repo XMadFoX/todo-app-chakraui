@@ -25,10 +25,13 @@ export default function TodoItem({ todo }) {
 	return (
 		<ListItem display='flex' alignItems='center' padding='0.5rem'>
 			<Checkbox
+				maxWidth='100%'
+				overflowX='auto'
 				isChecked={todo.done}
 				onChange={() => toggleDone(todo.id, !todo.done)}>
 				<Text
 					decoration={todo.done && 'line-through'}
+					overflowWrap='break-word'
 					color={todo.done && 'GrayText'}>
 					{todo.text}
 				</Text>
