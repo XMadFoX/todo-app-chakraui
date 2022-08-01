@@ -1,4 +1,4 @@
-import { atom } from "recoil";
+import { atom } from 'recoil';
 
 const todosState = atom({
 	key: 'todos',
@@ -8,4 +8,9 @@ const todosState = atom({
 	],
 });
 
-export { todosState };
+const filterState = atom<'all' | 'active' | 'completed'>({
+	key: 'filter',
+	default: 'all',
+});
+
+export { todosState, filterState };

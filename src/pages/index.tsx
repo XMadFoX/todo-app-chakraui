@@ -16,6 +16,14 @@ const Index = () => (
 			<Hero />
 			<CreateTodo />
 			<TodoList />
+			<Box
+				mt='1.5rem'
+				padding='1rem'
+				bgColor='background'
+				rounded='6px'
+				display={['block', 'none']}>
+				<Filter />
+			</Box>
 		</Box>
 	</Box>
 );
