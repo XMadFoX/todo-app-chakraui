@@ -3,6 +3,7 @@ import { useRecoilState } from 'recoil';
 import { todosState } from '../state';
 import Checkbox from './Checkbox';
 import { Reorder } from 'framer-motion';
+import { useState } from 'react';
 
 export default function TodoItem({ todo }) {
 	const [todos, setTodos] = useRecoilState(todosState);
@@ -22,15 +23,18 @@ export default function TodoItem({ todo }) {
 		setTodos(todos.filter((todo) => todo.id !== id));
 	};
 
+	const [preventClick, setPreventClick] = useState(false);
+
 	return (
 		<Reorder.Item
 			style={{ display: 'flex', alignItems: 'center', padding: '0.5rem' }}
 			value={todo}
-			id={todo}
+			id={todo.id}
 			initial={{ opacity: 0, scale: 0.9 }}
 			animate={{ opacity: 1, scale: 1 }}
 			exit={{ opacity: 0, scale: 0.9 }}
-			transition={{ duration: 0.3 }}>
+			onDragStart={() => setPreventClick(true)}
+			onDragEnd={() => setTimeout(() => setPreventClick(false), 10)}
 			transition={{ duration: 0.3 }}
 			className='todo-item'>
 			<Checkbox
@@ -40,6 +44,7 @@ export default function TodoItem({ todo }) {
 				style={{ width: '100%' }}
 				onChange={(e) => {
 					e.stopPropagation();
+					if (preventClick) return;
 					toggleDone(todo.id, !todo.done);
 				}}>
 				<Text
@@ -52,7 +57,7 @@ export default function TodoItem({ todo }) {
 			</Checkbox>
 			<CloseButton
 				aria-label='Remove task'
-				onClick={() => removeTodo(todo.id)}
+				onClick={() => !preventClick && removeTodo(todo.id)}
 				marginLeft='auto'
 			/>
 			<style global jsx>{`
