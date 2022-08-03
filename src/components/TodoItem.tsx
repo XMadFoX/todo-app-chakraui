@@ -26,7 +26,11 @@ export default function TodoItem({ todo }) {
 		<Reorder.Item
 			style={{ display: 'flex', alignItems: 'center', padding: '0.5rem' }}
 			value={todo}
-			id={todo}>
+			id={todo}
+			initial={{ opacity: 0, scale: 0.9 }}
+			animate={{ opacity: 1, scale: 1 }}
+			exit={{ opacity: 0, scale: 0.9 }}
+			transition={{ duration: 0.3 }}>
 			<Checkbox
 				maxWidth='100%'
 				overflowX='auto'
