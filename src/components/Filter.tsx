@@ -17,7 +17,7 @@ export default function Filter() {
 	const group = getRootProps();
 
 	return (
-		<HStack display='flex' justifyContent='space-evenly' {...group}>
+		<HStack display='flex' justifyContent='space-evenly' spacing={'2em'} {...group}>
 			{options.map((option) => {
 				const radio = getRadioProps({ value: option });
 

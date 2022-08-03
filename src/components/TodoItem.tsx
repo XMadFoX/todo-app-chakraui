@@ -1,8 +1,8 @@
-import React from 'react';
-import { CloseButton, ListItem, Text } from '@chakra-ui/react';
+import { CloseButton, Text } from '@chakra-ui/react';
 import { useRecoilState } from 'recoil';
 import { todosState } from '../state';
 import Checkbox from './Checkbox';
+import { Reorder } from 'framer-motion';
 
 export default function TodoItem({ todo }) {
 	const [todos, setTodos] = useRecoilState(todosState);
@@ -23,12 +23,18 @@ export default function TodoItem({ todo }) {
 	};
 
 	return (
-		<ListItem display='flex' alignItems='center' padding='0.5rem'>
+		<Reorder.Item
+			style={{ display: 'flex', alignItems: 'center', padding: '0.5rem' }}
+			value={todo}
+			id={todo}>
 			<Checkbox
 				maxWidth='100%'
 				overflowX='auto'
 				isChecked={todo.done}
-				onChange={() => toggleDone(todo.id, !todo.done)}>
+				onChange={(e) => {
+					e.stopPropagation();
+					toggleDone(todo.id, !todo.done);
+				}}>
 				<Text
 					decoration={todo.done && 'line-through'}
 					overflowWrap='break-word'
@@ -42,6 +48,6 @@ export default function TodoItem({ todo }) {
 				onClick={() => removeTodo(todo.id)}
 				marginLeft='auto'
 			/>
-		</ListItem>
+		</Reorder.Item>
 	);
 }

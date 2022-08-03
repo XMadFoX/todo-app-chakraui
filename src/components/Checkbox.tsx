@@ -14,7 +14,7 @@ export default function Checkbox(props) {
 			flexDirection='row'
 			alignItems='center'
 			gridColumnGap={2}
-			onClick={() => console.log('clicked')}
+			// onClick={() => console.log('clicked')}
 			tabIndex={0}
 			onKeyDown={(e: any) => {
 				if (e.key !== ' ') return;

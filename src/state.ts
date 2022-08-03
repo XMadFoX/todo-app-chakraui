@@ -1,6 +1,7 @@
 import { atom } from 'recoil';
+import { Filter, Todo } from './types';
 
-const todosState = atom({
+const todosState = atom<Todo[]>({
 	key: 'todos',
 	default: [
 		{ id: '1', text: 'Learn Recoil', done: false },
@@ -8,7 +9,7 @@ const todosState = atom({
 	],
 });
 
-const filterState = atom<'all' | 'active' | 'completed'>({
+const filterState = atom<Filter>({
 	key: 'filter',
 	default: 'all',
 });
