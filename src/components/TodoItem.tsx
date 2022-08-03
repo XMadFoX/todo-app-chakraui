@@ -31,10 +31,13 @@ export default function TodoItem({ todo }) {
 			animate={{ opacity: 1, scale: 1 }}
 			exit={{ opacity: 0, scale: 0.9 }}
 			transition={{ duration: 0.3 }}>
+			transition={{ duration: 0.3 }}
+			className='todo-item'>
 			<Checkbox
 				maxWidth='100%'
 				overflowX='auto'
 				isChecked={todo.done}
+				style={{ width: '100%' }}
 				onChange={(e) => {
 					e.stopPropagation();
 					toggleDone(todo.id, !todo.done);
@@ -52,6 +55,14 @@ export default function TodoItem({ todo }) {
 				onClick={() => removeTodo(todo.id)}
 				marginLeft='auto'
 			/>
+			<style global jsx>{`
+				.todo-item {
+					border-bottom: 1px solid #e6e5ea;
+				}
+				[data-theme='dark'] .todo-item {
+					border-bottom: 1px solid #37394e;
+				}
+			`}</style>
 		</Reorder.Item>
 	);
 }

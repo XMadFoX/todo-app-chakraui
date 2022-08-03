@@ -14,7 +14,7 @@ export default function TodoList() {
 	};
 
 	return (
-		<Box backgroundColor='background' rounded='6px'>
+		<Box backgroundColor='background' rounded='6px' maxH='80vh' overflowY='auto'>
 			<Reorder.Group axis='y' onReorder={setTodos} values={todos}>
 				<AnimatePresence>
 					{todos
@@ -33,7 +33,7 @@ export default function TodoList() {
 						))}
 				</AnimatePresence>
 			</Reorder.Group>
-			<Flex alignItems='center' justifyContent='space-between' px='1.5rem'>
+			<Flex alignItems='center' justifyContent='space-between' px='1.5rem' py={2}>
 				<Text fontWeight='thin' opacity='0.25'>
 					{todos.filter((todo) => !todo.done).length} items left
 				</Text>
