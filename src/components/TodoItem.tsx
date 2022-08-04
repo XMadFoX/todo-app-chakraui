@@ -28,21 +28,12 @@ export default function TodoItem({ todo }) {
 	return (
 		<Reorder.Item
 			style={{ display: 'flex', alignItems: 'center', padding: '0.5rem' }}
+			{...itemAnimations}
 			value={todo}
 			id={todo.id}
-			initial={{ opacity: 0, scale: 0.9 }}
-			animate={{ opacity: 1, scale: 1, background: '', border: '', borderRadius: '' }}
-			exit={{ opacity: 0, scale: 0.9 }}
-			whileDrag={{
-				scale: 1.02,
-				z: 5,
-				background: 'var(--chakra-colors-background)',
-				border: '1px solid var(--chakra-colors-text)',
-				borderRadius: '6px',
-			}}
+			data-group
 			onDragStart={() => setPreventClick(true)}
 			onDragEnd={() => setTimeout(() => setPreventClick(false), 10)}
-			transition={{ duration: 0.2 }}
 			className='todo-item'>
 			<Checkbox
 				maxWidth='100%'
@@ -65,7 +56,7 @@ export default function TodoItem({ todo }) {
 			<CloseButton
 				aria-label='Remove task'
 				onClick={() => !preventClick && removeTodo(todo.id)}
-				marginLeft='auto'
+				{...closeButtonStyle}
 			/>
 			<style global jsx>{`
 				.todo-item {
@@ -78,3 +69,31 @@ export default function TodoItem({ todo }) {
 		</Reorder.Item>
 	);
 }
+
+const closeButtonStyle = {
+	opacity: 0,
+	_groupHover: { opacity: 1 },
+	_groupFocus: { opacity: 1 },
+	_focus: { opacity: 1 },
+	marginLeft: 'auto',
+};
+
+const itemAnimations = {
+	initial: { opacity: 0, scale: 0.9 },
+	animate: {
+		opacity: 1,
+		scale: 1,
+		background: '',
+		border: '',
+		borderRadius: '',
+	},
+	exit: { opacity: 0, scale: 0.9 },
+	whileDrag: {
+		scale: 1.02,
+		z: 5,
+		background: 'var(--chakra-colors-background)',
+		border: '1px solid var(--chakra-colors-text)',
+		borderRadius: '6px',
+	},
+	transition: { duration: 0.2 },
+};

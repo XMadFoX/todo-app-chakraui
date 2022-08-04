@@ -1,6 +1,8 @@
 import { Box, Button, Flex, Text } from '@chakra-ui/react';
 import { AnimatePresence, Reorder } from 'framer-motion';
+import { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
+import { defaultTodos } from '../data';
 import { filterState, todosState } from '../state';
 import Filter from './Filter';
 import TodoItem from './TodoItem';
@@ -13,8 +15,18 @@ export default function TodoList() {
 		setTodos(todos.filter((todo) => !todo.done));
 	};
 
+	useEffect(() => {
+		let localTodos = localStorage.getItem('todos');
+		if (!localTodos) setTodos(defaultTodos);
+		else setTodos(JSON.parse(localTodos));
+	}, []);
+
+	useEffect(() => {
+		localStorage.setItem('todos', JSON.stringify(todos));
+	}, [todos]);
+
 	return (
-		<Box backgroundColor='background' rounded='6px' shadow='2xl' >
+		<Box backgroundColor='background' rounded='6px' shadow='2xl'>
 			<Reorder.Group axis='y' onReorder={setTodos} values={todos}>
 				<AnimatePresence>
 					{todos
@@ -33,7 +45,11 @@ export default function TodoList() {
 						))}
 				</AnimatePresence>
 			</Reorder.Group>
-			<Flex alignItems='center' justifyContent='space-between' px='1.5rem' py={2}>
+			<Flex
+				alignItems='center'
+				justifyContent='space-between'
+				px='1.5rem'
+				py={2}>
 				<Text fontWeight='thin' opacity='0.25'>
 					{todos.filter((todo) => !todo.done).length} items left
 				</Text>

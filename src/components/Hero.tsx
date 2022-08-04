@@ -9,7 +9,7 @@ export default function Hero() {
 		<Flex
 			mb='2rem'
 			height='90px'
-			maxW='3xl'
+			maxW='2xl'
 			w='100%'
 			px='1.5rem'
 			justifyContent='space-between'

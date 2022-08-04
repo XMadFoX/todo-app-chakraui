@@ -18,7 +18,7 @@ export default function ThemeToggle() {
 			onClick={toggleColorMode}
 			transition='all 0.2s ease-in-out'
 			icon={
-				colorMode === 'light' ? (
+				colorMode === 'dark' ? (
 					<SunIcon _hover={{ transform: 'rotate(180deg)' }} transition='all 0.5s ease-in-out' />
 				) : (
 					<MoonIcon />

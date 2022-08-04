@@ -15,7 +15,7 @@ const Index = () => (
 		zIndex={-1}
 		alignItems='center'>
 		<Hero />
-		<Box zIndex={1} width='100%' px='1.5rem' maxWidth='3xl' my='auto'>
+		<Box zIndex={1} width='100%' px='1.5rem' maxWidth='2xl' my='auto'>
 			<CreateTodo />
 			<TodoList />
 			<Box
