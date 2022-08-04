@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Heading, useColorMode } from '@chakra-ui/react';
+import { Box, Flex, Heading, useColorMode } from '@chakra-ui/react';
 import React from 'react';
 import ThemeToggle from './ThemeToggle';
 
@@ -6,7 +6,16 @@ export default function Hero() {
 	const { colorMode } = useColorMode();
 
 	return (
-		<Flex mb={'2rem'}>
+		<Flex
+			mb='2rem'
+			height='90px'
+			maxW='3xl'
+			w='100%'
+			px='1.5rem'
+			justifyContent='space-between'
+			alignItems='end'
+			zIndex={1}
+			mt={['1rem', '50px']}>
 			<Box
 				height={['200px', '300px']}
 				backgroundImage={[
@@ -24,10 +33,7 @@ export default function Hero() {
 					top: '0',
 				}}
 			/>
-			<Heading
-				marginRight='auto'
-				letterSpacing={'1rem'}
-				textTransform='uppercase'>
+			<Heading letterSpacing={'1rem'} textTransform='uppercase' color='white'>
 				Todo
 			</Heading>
 			<ThemeToggle />

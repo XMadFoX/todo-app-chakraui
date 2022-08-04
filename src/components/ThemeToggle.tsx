@@ -10,8 +10,20 @@ export default function ThemeToggle() {
 		<IconButton
 			aria-label={`toggle ${colorMode === 'light' ? 'dark' : 'light'} mode`}
 			bgColor='transparent'
+			_hover={{
+				bgColor: 'rgba(255, 255, 255, 0.2)',
+			}}
+			color='white'
+			fontSize='1.5rem'
 			onClick={toggleColorMode}
-			icon={colorMode === 'light' ? <SunIcon /> : <MoonIcon />}
+			transition='all 0.2s ease-in-out'
+			icon={
+				colorMode === 'light' ? (
+					<SunIcon _hover={{ transform: 'rotate(180deg)' }} transition='all 0.5s ease-in-out' />
+				) : (
+					<MoonIcon />
+				)
+			}
 		/>
 	);
 }

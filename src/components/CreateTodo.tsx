@@ -26,6 +26,7 @@ export default function CreateTodo() {
 			<FormControl
 				display='flex'
 				backgroundColor='background'
+				shadow='xl'
 				padding='0.5rem'
 				mb={'1.5rem'}
 				rounded='6px'>

@@ -12,10 +12,10 @@ const Index = () => (
 		bgColor='pagebg'
 		display='flex'
 		flexDirection='column'
-		alignItems='center'
-		justifyContent='center'>
-		<Box zIndex={1} width='100%' px='1.5rem' maxWidth='3xl'>
-			<Hero />
+		zIndex={-1}
+		alignItems='center'>
+		<Hero />
+		<Box zIndex={1} width='100%' px='1.5rem' maxWidth='3xl' my='auto'>
 			<CreateTodo />
 			<TodoList />
 			<Box
@@ -23,6 +23,7 @@ const Index = () => (
 				padding='1rem'
 				bgColor='background'
 				rounded='6px'
+				shadow='xl'
 				display={['block', 'none']}>
 				<Filter />
 			</Box>
