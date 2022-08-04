@@ -35,6 +35,10 @@ const theme = extendTheme({
 				default: '#FF0080',
 				_dark: '#fbec8f',
 			},
+			border: {
+				default: '#e6e5ea',
+				_dark: '#37394e',
+			},
 		},
 		radii: {
 			button: '12px',

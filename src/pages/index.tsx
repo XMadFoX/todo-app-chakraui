@@ -7,7 +7,7 @@ import TodoList from '../components/TodoList';
 const Index = () => (
 	<Box
 		width='100%'
-		height='100vh'
+		minHeight='100vh'
 		overflowY='auto'
 		bgColor='pagebg'
 		display='flex'
@@ -26,6 +26,9 @@ const Index = () => (
 				display={['block', 'none']}>
 				<Filter />
 			</Box>
+			<p style={{ color: 'gray', textAlign: 'center', marginTop: '2rem' }}>
+				Drag and Drop to reorder list
+			</p>
 		</Box>
 		<style jsx global>{`
 			html {

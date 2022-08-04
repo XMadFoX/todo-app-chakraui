@@ -31,11 +31,18 @@ export default function TodoItem({ todo }) {
 			value={todo}
 			id={todo.id}
 			initial={{ opacity: 0, scale: 0.9 }}
-			animate={{ opacity: 1, scale: 1 }}
+			animate={{ opacity: 1, scale: 1, background: '', border: '', borderRadius: '' }}
 			exit={{ opacity: 0, scale: 0.9 }}
+			whileDrag={{
+				scale: 1.02,
+				z: 5,
+				background: 'var(--chakra-colors-background)',
+				border: '1px solid var(--chakra-colors-text)',
+				borderRadius: '6px',
+			}}
 			onDragStart={() => setPreventClick(true)}
 			onDragEnd={() => setTimeout(() => setPreventClick(false), 10)}
-			transition={{ duration: 0.3 }}
+			transition={{ duration: 0.2 }}
 			className='todo-item'>
 			<Checkbox
 				maxWidth='100%'

@@ -27,8 +27,12 @@ export default function Checkbox(props) {
 			<input {...getInputProps()} hidden />
 			<Center
 				rounded='full'
-				bgGradient='linear(135deg, blue.200, purple.300)'
-				w={6}
+				bgPos={state?.isChecked ? '100% 100%' : '0% 0%'}
+				bgSize='200% 200%'
+				bgGradient='linear(135deg, var(--chakra-colors-border) 50%,#6ebaf8 51%, #a47ee1 100%)'
+				_hover={{ bgPos: '100% 100%' }}
+				transition='all 0.2s ease-in'
+				minW={6}
 				h={6}
 				{...getCheckboxProps()}>
 				<Center

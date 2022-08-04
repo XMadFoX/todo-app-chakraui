@@ -14,7 +14,7 @@ export default function TodoList() {
 	};
 
 	return (
-		<Box backgroundColor='background' rounded='6px' maxH='80vh' overflowY='auto'>
+		<Box backgroundColor='background' rounded='6px' shadow='2xl' >
 			<Reorder.Group axis='y' onReorder={setTodos} values={todos}>
 				<AnimatePresence>
 					{todos
